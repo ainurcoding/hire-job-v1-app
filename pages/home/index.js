@@ -88,7 +88,7 @@ export default function index() {
             </div>
             <div className='col-3 person-info-detail d-flex justify-content-center align-items-center'>
               <div className='detail-person-btn'>
-                <Link href="/person_detail/id"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
+                <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function index() {
             </div>
             <div className='col-3 person-info-detail d-flex justify-content-center align-items-center'>
               <div className='detail-person-btn'>
-                <Link href="/person_detail/id"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
+                <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
               </div>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function index() {
             </div>
             <div className='col-3 person-info-detail d-flex justify-content-center align-items-center'>
               <div className='detail-person-btn'>
-                <Link href="/person_detail/id"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
+                <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
               </div>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function index() {
             </div>
             <div className='col-3 person-info-detail d-flex justify-content-center align-items-center'>
               <div className='detail-person-btn'>
-                <Link href="/person_detail/id"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
+                <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
               </div>
             </div>
           </div>
