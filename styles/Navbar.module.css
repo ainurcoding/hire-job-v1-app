@@ -1,0 +1,44 @@
+.btn-purple {
+    height: 60px;
+    width: 120px;
+    background-color: #5E50A1;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5d50a1c3;
+    color: rgba(255, 255, 255, 0.739);
+}
+
+.btn-white {
+    height: 60px;
+    width: 120px;
+    background-color: white;
+    border: 1px solid #5d50a1;
+    color: black;
+}
+
+.btn-white:hover {
+    border: 1px solid #5d50a1c3;
+    background-color: rgba(113, 113, 113, 0.584);
+    color: rgba(0, 0, 0, 0.324);
+}
+
+.navbar-height {
+    height: 100px;
+    z-index: 999;
+}
+.img-rounded {
+    border-radius: 50%;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
+.modal-size {
+    height: 400px;
+    overflow: auto;
+    background-color: #fff;
+}

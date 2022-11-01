@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+
+.open_sans_sb {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.open_sans_lt {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.hover-for-btn{
+    color: black;
+}
+.hover-for-btn:hover {
+    color: #5E50A1;
+}
+
+.bg-auth {
+    background-color: #F6F7F8;
+}
+
+.btn-yellow {
+    background-color: #FBB017;
+    border: none;
+}
+
+.btn-yellow:hover {
+    background-color: #fbaf1771;
+    border: none;
+}
+
+.txt-yellow-link {
+    color: #FBB017;
+}
+
+.txt-yellow-link:hover {
+    color: #fbaf1771;
+}
+
+.banner-auth {
+    background: linear-gradient(#5E50A1, hsla(250, 34%, 47%, 0.5)), url('/assets-img/banner-auth.jpg') no-repeat top center;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+}

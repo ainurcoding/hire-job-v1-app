@@ -1,0 +1,52 @@
+.btn-purple {
+    height: 60px;
+    width: max-content;
+    background-color: #5E50A1;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5d50a1c3;
+    color: rgba(255, 255, 255, 0.739);
+}
+
+.shadow-secondary {
+    height: 400px;
+    width: 500px;
+    background-color: #E2E5ED;
+    transform: rotate(-10deg);
+}
+
+.banner1st {
+    height: max-content;
+    width: max-content;
+}
+
+.opinion-sect {
+    background: #F6F7F8;
+    max-width: 100vw !important;
+    height: 800px;
+}
+
+.card-wrapper {
+    height: 400px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-image {
+    height: 200px;
+}
+
+.image-content {
+    height: 120px;
+    width: 120px;
+    border: 8px solid #ffcd69;
+    border-radius: 50%;
+}
+
+.person-desc {
+    height: 123px;
+    overflow: auto;
+    scroll-snap-type: none;
+}

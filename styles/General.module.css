@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+.open_sans_sb {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.open_sans_lt {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.btn-custom-border-purple {
+    height: 60px;
+    width: 120px;
+    border: 1px solid #5E50A1;
+    border-radius: 5px;
+}
+
+.btn-custom-border-purple:hover {
+    height: 60px;
+    width: 120px;
+    border: 1px solid #5E50A1;
+    border-radius: 5px;
+}
+
+.btn-custom-bg-purple {
+    height: 60px;
+    width: 120px;
+    background-color: #5E50A1;
+    border-radius: 5px;
+}
+
+.btn-custom-bg-purple:hover {
+    height: 60px;
+    width: 120px;
+    background-color: #5d50a136;
+    
+    border-radius: 5px;
+}
+
+.text-purple-hover {
+    color: #5E50A1;
+}
+
+.text-purple-hover:hover {
+    color: #5d50a136;
+}
+
+.text-white-hover {
+    color: #fff;
+}
+
+.text-white-hover:hover {
+    color: #5E50A1;
+}
