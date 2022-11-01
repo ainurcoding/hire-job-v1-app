@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
                 <div className='d-flex flex-rows gap-3 '>
                     <div className='col-4'>
-                        <p className={`text-white ${styles['open_sans_sb']}`}>2022 Pwworld. All right reserved</p>
+                        <p className={`text-white ${styles['open_sans_sb']}`}>2022 Peworld. All right reserved</p>
                     </div>
                     <div className='col-5'>
                         
