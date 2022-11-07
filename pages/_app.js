@@ -22,7 +22,8 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.js")
     require('../public/JS/swiper-carousel')
-  })
+    require('../public/JS/upload-img-worker')
+  }, [])
   const Layout = layouts[Component.layout] || noLayout
   return (
     <Layout>

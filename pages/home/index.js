@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import gStyle from '../../styles/General.module.css'
 import Link from 'next/link'
+import axios from 'axios'
 
 export default function index() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get(`http://localhost:5000/v1/user/ava_users`)
+    .then((res) => {
+      // console.log(res.data.data.rows)
+      setData(res.data.data.rows)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  },[])
+
+  console.log(data);
+
+
   return (
     <>
       <Head>
@@ -51,7 +69,7 @@ export default function index() {
 
         </div>
         <div className='wrapper-person'>
-          <div className={`ms-5 ${styles['person-card']} d-flex`}>
+          {/* <div className={`ms-5 ${styles['person-card']} d-flex`}>
             <div className={` col-2 d-flex justify-content-center align-items-center`} >
               <img src="/assets-img/banner-auth.jpg" alt="louis tomlinson" className={`${styles['image-content']}`} />
             </div>
@@ -91,24 +109,26 @@ export default function index() {
                 <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
               </div>
             </div>
-          </div>
-          <div className={`ms-5 ${styles['person-card']} d-flex`}>
+          </div> */}
+          {
+            data.map((item,index) => (
+              <div className={`ms-5 ${styles['person-card']} d-flex`}>
             <div className={` col-2 d-flex justify-content-center align-items-center`} >
-              <img src="/assets-img/banner-auth.jpg" alt="louis tomlinson" className={`${styles['image-content']}`} />
+              <img src={`http://localhost:5000/ava_user/${item.avatar}`} alt="louis tomlinson" className={`${styles['image-content']}`} />
             </div>
             <div className='col-7 person-info-wrapper d-flex flex-column  justify-content-center'>
               <div className='mt-3 person-name'>
-                <p className={`h4 ${styles['open_sans_sb']}`}>Louis Tomlinson</p>
+                <p className={`h4 ${styles['open_sans_sb']}`}>{item.full_name}</p>
               </div>
               <div className='person-job'>
-                <p className={`text-muted ${styles['open_sans_lt']} h6`}>Web developer</p>
+                <p className={`text-muted ${styles['open_sans_lt']} h6`}>{ item.job_desc ? ( <p>{item.job_desc}</p> ) : ( <p>---</p> ) }</p>
               </div>
               <div className='d-flex person-position gap-2'>
                 <div className='icon-maps'>
                   <i className="text-muted bi bi-geo-alt"></i>
                 </div>
                 <div className='desc-position'>
-                  <p className={`text-muted ${styles['open_sans_lt']}`}>Lorem Ipsum</p>
+                  <p className={`text-muted ${styles['open_sans_lt']}`}>{ item.domisli ? ( <p>{item.domisli}</p> ) : ( <p>unknown</p> ) }</p>
                 </div>
               </div>
               <div className='ms-1 person-skills w-50 row gap-2'>
@@ -129,92 +149,12 @@ export default function index() {
             </div>
             <div className='col-3 person-info-detail d-flex justify-content-center align-items-center'>
               <div className='detail-person-btn'>
-                <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
+                <Link href={`/profile/person_detail/${item.user_id}`}><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
               </div>
             </div>
           </div>
-          <div className={`ms-5 ${styles['person-card']} d-flex`}>
-            <div className={` col-2 d-flex justify-content-center align-items-center`} >
-              <img src="/assets-img/banner-auth.jpg" alt="louis tomlinson" className={`${styles['image-content']}`} />
-            </div>
-            <div className='col-7 person-info-wrapper d-flex flex-column  justify-content-center'>
-              <div className='mt-3 person-name'>
-                <p className={`h4 ${styles['open_sans_sb']}`}>Louis Tomlinson</p>
-              </div>
-              <div className='person-job'>
-                <p className={`text-muted ${styles['open_sans_lt']} h6`}>Web developer</p>
-              </div>
-              <div className='d-flex person-position gap-2'>
-                <div className='icon-maps'>
-                  <i className="text-muted bi bi-geo-alt"></i>
-                </div>
-                <div className='desc-position'>
-                  <p className={`text-muted ${styles['open_sans_lt']}`}>Lorem Ipsum</p>
-                </div>
-              </div>
-              <div className='ms-1 person-skills w-50 row gap-2'>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-              </div>
-
-            </div>
-            <div className='col-3 person-info-detail d-flex justify-content-center align-items-center'>
-              <div className='detail-person-btn'>
-                <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
-              </div>
-            </div>
-          </div>
-          <div className={`ms-5 ${styles['person-card']} d-flex`}>
-            <div className={` col-2 d-flex justify-content-center align-items-center`} >
-              <img src="/assets-img/banner-auth.jpg" alt="louis tomlinson" className={`${styles['image-content']}`} />
-            </div>
-            <div className='col-7 person-info-wrapper d-flex flex-column  justify-content-center'>
-              <div className='mt-3 person-name'>
-                <p className={`h4 ${styles['open_sans_sb']}`}>Louis Tomlinson</p>
-              </div>
-              <div className='person-job'>
-                <p className={`text-muted ${styles['open_sans_lt']} h6`}>Web developer</p>
-              </div>
-              <div className='d-flex person-position gap-2'>
-                <div className='icon-maps'>
-                  <i className="text-muted bi bi-geo-alt"></i>
-                </div>
-                <div className='desc-position'>
-                  <p className={`text-muted ${styles['open_sans_lt']}`}>Lorem Ipsum</p>
-                </div>
-              </div>
-              <div className='ms-1 person-skills w-50 row gap-2'>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-                <div className={`btn col-4 ${styles['skill-content']}`}>
-                  <p className={`${styles['open_sans_sb']} text-white h6`}>PHP</p>
-                </div>
-              </div>
-
-            </div>
-            <div className='col-3 person-info-detail d-flex justify-content-center align-items-center'>
-              <div className='detail-person-btn'>
-                <Link href="/profile/person_detail"><button type="button" className={`button ${styles['btn-purple-search']}`}><p className={`text-white ${styles['open_sans_sb']} h6`}>Lihat Profile</p></button></Link>
-              </div>
-            </div>
-          </div>
+            ))
+          }
         </div>
         
         <div className='wrapper-pagination'>

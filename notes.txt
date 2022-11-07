@@ -1,0 +1,10 @@
+untuk penggunaan fetching data dengan csr selalu gunakan useEffect didalam fungsi index / fungsi pada halaman tsb.
+
+
+
+rhefa said :
+kalo mau biar di refresh ga error .map, di useeffect bisa ditambahin router.isReady
+conto useEffect(() => {
+        
+    }, [router.isReady])
+mungkin harus ditambahin conditional rendering dulu ya, tambahin isloading, aku berhasil pake itu

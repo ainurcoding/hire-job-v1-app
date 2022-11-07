@@ -26,8 +26,9 @@
 
 .navbar-height {
     height: 100px;
-    z-index: 999;
+    z-index: 1030;
 }
+
 .img-rounded {
     border-radius: 50%;
 }
@@ -41,4 +42,33 @@
     height: 400px;
     overflow: auto;
     background-color: #fff;
+}
+
+.text-purple-link {
+    color: #5E50A1;
+    transition: 0.5s;
+}
+
+.text-purple-link:hover {
+    color: #362f59;
+}
+
+.navigation-responsive-icon {
+    display: none;
+}
+
+
+@media (max-width: 480px) {
+    .icon-logo-responsive {
+        display: none !important;
+    }
+    .navigation-responsive {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navigation-responsive-icon {
+        display: flex;
+    }
 }

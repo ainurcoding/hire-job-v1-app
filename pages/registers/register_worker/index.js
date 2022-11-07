@@ -2,8 +2,48 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../../styles/Auth.module.css'
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import axios from "axios"
+import { useEffect } from 'react';
+
 
 export default function Home() {
+   
+    const router = useRouter();
+    const [form, setForm] = useState({
+        full_name: '',
+        email: '',
+        phone: '',
+        password: '',
+        password2: '',
+    })
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        console.log(form);
+        if(form.password !== form.password2) {
+            alert("password not match");
+        } else {
+            const body = {
+                full_name: form.full_name,
+                email: form.email,
+                phone: form.phone,
+                password: form.password
+            }
+            axios
+            .post(`http://localhost:5000/v1/user/register`,body)
+            .then((res) => {
+                console.log(res.data);
+                alert('Register Success');
+                router.push('/')
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        }
+    }
+
     return (
         <div>
             <Head>
@@ -32,26 +72,26 @@ export default function Home() {
                             <p className={`h5 ${styles['open_sans_lt']}`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dio rhpmcis auctor.</p>
                         </div>
                         <div className='form'>
-                            <form>
+                            <form onSubmit={(e) => onSubmitHandler(e)}>
                                 <div className="mb-3">
-                                    <label for="name" className={`form-label ${styles['open_sans_lt']}`}>Nama</label>
-                                    <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder='Masukan nama panjang' />
+                                    <label htmlFor="full_name" className={`form-label ${styles['open_sans_lt']}`}>Nama Lengkap</label>
+                                    <input type="text" className="form-control" id="full_name" aria-describedby="emailHelp" placeholder='Masukan nama panjang' onChange={(e) => setForm({ ...form, full_name: e.target.value })} />
                                 </div>
                                 <div className="mb-3">
-                                    <label for="email" className={`form-label ${styles['open_sans_lt']}`}>Email</label>
-                                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder='Masukan alamat email'/>
+                                    <label htmlFor="email" className={`form-label ${styles['open_sans_lt']}`}>Email</label>
+                                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder='Masukan alamat email' onChange={(e) => setForm({ ...form, email: e.target.value })} />
                                 </div>
                                 <div className="mb-3">
-                                    <label for="phone" className={`form-label ${styles['open_sans_lt']}`}>No handphone</label>
-                                    <input type="text" className="form-control" id="phone" aria-describedby="emailHelp" placeholder='Masukan no handphone'/>
+                                    <label htmlFor="phone" className={`form-label ${styles['open_sans_lt']}`}>No handphone</label>
+                                    <input type="text" className="form-control" id="phone" aria-describedby="emailHelp" placeholder='Masukan no handphone' onChange={(e) => setForm({ ...form, phone: e.target.value })}/>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="password" className={`form-label ${styles['open_sans_lt']}`}>Kata Sandi</label>
-                                    <input type="password" className="form-control" id="password" aria-describedby="emailHelp" placeholder='Masukan kata sandi'/>
+                                    <label htmlFor="password" className={`form-label ${styles['open_sans_lt']}`}>Kata Sandi</label>
+                                    <input type="password" className="form-control" id="password" aria-describedby="emailHelp" placeholder='Masukan kata sandi' onChange={(e) => setForm({ ...form, password: e.target.value })}/>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="password2" className={`form-label ${styles['open_sans_lt']}`}>Konfirmasi kata sandi</label>
-                                    <input type="text" className="form-control" id="password2" aria-describedby="emailHelp" placeholder='Masukan konfirmasi kata sandi'/>
+                                    <label htmlFor="password2" className={`form-label ${styles['open_sans_lt']}`}>Konfirmasi kata sandi</label>
+                                    <input type="password" className="form-control" id="password2" aria-describedby="emailHelp" placeholder='Masukan konfirmasi kata sandi' onChange={(e) => setForm({ ...form, password2: e.target.value })}/>
                                 </div>
                                 <div className='mb-3 button-submit w-100'>
                                     <button className={`w-100 ${styles['btn-yellow']}`} type="submit">

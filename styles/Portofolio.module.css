@@ -1,5 +1,5 @@
 .kontent-wrapper {
-    height: 1200px;
+    height: 1500px;
     background: #F6F7F8;
 }
 
@@ -10,11 +10,13 @@
 
 }
 
+
+
 .card-aside {
     width: 350px;
     border-radius: 5px;
     background: white;
-    top: 5% !important;
+    top: 10% !important;
     left: 10% !important;
     right: 0 !important;
 }
@@ -69,7 +71,7 @@
     height: 700px;
     overflow: auto;
     width: 750px;
-    top: 5% !important;
+    top: 10% !important;
     left: 40% !important;
     right: 0 !important;
 }

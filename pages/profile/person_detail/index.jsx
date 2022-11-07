@@ -79,6 +79,16 @@ export default function index() {
                 <p className={`${gStyle["open_sans_sb"]}`}>Hire</p>
               </button>
             </div>
+            <div className="ms-3 mb-5 hire-btn d-flex w-75">
+              <Link href="/profile/edit_profile/worker" className="w-100">
+                <button
+                  type="button"
+                  className={`btn ${styles["btn-purple"]} w-100`}
+                >
+                  <p className={`${gStyle["open_sans_sb"]}`}>Edit Profile</p>
+                </button>
+              </Link>
+            </div>
             <div className={`ms-3 mb-5 skills-wrapper d-flex flex-column`}>
               <div className="title">
                 <p className={`${gStyle["open_sans_sb"]} h4`}>Skill</p>
@@ -173,14 +183,32 @@ export default function index() {
         <div className={`position-absolute ${styles["card-aside-right"]}`}>
           <div className="ms-3 link-wrapper d-flex gap-5">
             <div className="mt-3 portofolio-Link">
-              <button className="btn" type="button" onClick={onPortofolio} style={showPortofolio ? {borderBottom: "3px solid #5E50A1",background :"none"} : {}}>
+              <button
+                className="btn"
+                type="button"
+                onClick={onPortofolio}
+                style={
+                  showPortofolio
+                    ? { borderBottom: "3px solid #5E50A1", background: "none" }
+                    : {}
+                }
+              >
                 <p className={`${styles["open_sans_sb"]} h4 text-black`}>
                   Portofolio
                 </p>
               </button>
             </div>
             <div className="mt-3 portofolio-Link">
-              <button className="btn" type="button" onClick={onWorkExp} style={showWorkExp ? {borderBottom: "3px solid #5E50A1",background :"none"} : {}}>
+              <button
+                className="btn"
+                type="button"
+                onClick={onWorkExp}
+                style={
+                  showWorkExp
+                    ? { borderBottom: "3px solid #5E50A1", background: "none" }
+                    : {}
+                }
+              >
                 <p className={`${styles["open_sans_sb"]} h4 text-black`}>
                   Pengalaman kerja
                 </p>
@@ -188,10 +216,10 @@ export default function index() {
             </div>
           </div>
           <div className="ms-3 mt-3 work-exp-wrapper">
-            {showWorkExp ? <WorkExp/> : null}
+            {showWorkExp ? <WorkExp /> : null}
           </div>
           <div className="ms-3 mt-3 kontent-wrapper">
-            {showPortofolio ? <Portofolio/> : null}
+            {showPortofolio ? <Portofolio /> : null}
           </div>
         </div>
       </div>

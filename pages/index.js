@@ -2,9 +2,53 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Auth.module.css'
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import axios from "axios"
 
 
 export default function Home() {
+  const router = useRouter()
+
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  })
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    if (form.email === '' || form.password === '') {
+      alert('Please input your mail and password')
+    } else {
+      console.log(form.email +""+ form.password)
+      const body = {
+        email: form.email,
+        password: form.password
+      };
+      axios
+        .post(`http://localhost:5000/v1/user/login`, body)
+        .then((response) => {
+          console.log(response.data);
+          alert("login sukses");
+          localStorage.setItem("token", response.data.data.token);
+          localStorage.setItem("data", JSON.stringify(response.data.data.data));
+          return (
+            router.push('/landing')
+          )
+        })
+        .catch((err) => {
+          if (err.response) {
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else if (err.request) {
+            console.log(err.request);
+          } else {
+            console.log('Error', err.message);
+          }
+        })
+    }
+  }
   return (
     <div>
       <Head>
@@ -33,20 +77,20 @@ export default function Home() {
               <p className={`h5 ${styles['open_sans_lt']}`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dio rhpmcis auctor.</p>
             </div>
             <div className='form'>
-              <form>
+              <form onSubmit={(e) => onSubmitHandler(e)}>
                 <div className="mb-3">
-                  <label for="email" className={`form-label ${styles['open_sans_lt']}`}>Email</label>
-                  <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />  
+                  <label htmlFor="email" className={`form-label ${styles['open_sans_lt']}`} >Email</label>
+                  <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={(e) => setForm({ ...form, email: e.target.value })} />
                 </div>
                 <div className="mb-3">
-                  <label for="password" className={`form-label ${styles['open_sans_lt']}`}>Kata Sandi</label>
-                  <input type="email" className="form-control" id="password" aria-describedby="emailHelp" />  
+                  <label htmlFor="password" className={`form-label ${styles['open_sans_lt']}`}>Kata Sandi</label>
+                  <input type="password" className="form-control" id="password" aria-describedby="emailHelp" onChange={(e) => setForm({ ...form, password: e.target.value })} />
                 </div>
                 <div className='text-end mb-2'>
                   <Link href="/reset_password/email_verify" className={`text-decoration-none  ${styles['open_sans_lt']} ${styles['hover-for-btn']}`}>Lupa kata sandi?</Link>
                 </div>
                 <div className='mb-3 button-submit w-100'>
-                  <button className={`w-100 ${styles['btn-yellow']}`}  type="submit">
+                  <button className={`w-100 ${styles['btn-yellow']}`} type="submit">
                     <span className={`text-white ${styles['open_sans_sb']}`}>Masuk</span>
                   </button>
                 </div>
