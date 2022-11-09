@@ -1,0 +1,106 @@
+.kontent-wrapper {
+    height: 1500px;
+    background: #F6F7F8;
+}
+
+.bg-purple {
+    width: 100%;
+    height: 300px;
+    background: #5E50A1;
+
+}
+
+
+
+.card-aside {
+    width: 350px;
+    border-radius: 5px;
+    background: white;
+    top: 10% !important;
+    left: 10% !important;
+    right: 0 !important;
+}
+
+.change-theme {
+    width: max-content;
+    border-radius: 5px;
+    color: white;
+    top: 17% !important;
+    left: 88% !important;
+    right: 0 !important;
+    
+}
+
+.card-middle {
+    width: 50vw;
+    border-radius: 5px;
+    top: 13% !important;
+    left: 50vh;
+    right: 0 !important;
+    
+    
+}
+
+.img-wrapper {
+    height: 200px;
+    
+}
+
+
+.btn-purple {
+    height: 40px;
+    width: 100%;
+    background-color: #5E50A1;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5d50a1c3;
+    color: rgba(255, 255, 255, 0.739);
+}
+
+.wrap-skill {
+    width: 90%;
+}
+
+.btn-skill-custom {
+    height: 40px;
+    width: 100px;
+    background-color: rgb(255, 194, 71);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-skill-custom:hover {
+    background-color: rgb(255, 194, 71);
+    cursor: not-allowed;
+}
+
+.card-aside-right {
+    background-color: white;
+    border-radius: 5px;
+    height: 700px;
+    overflow: auto;
+    width: 750px;
+    top: 10% !important;
+    left: 40% !important;
+    right: 0 !important;
+}
+
+/* for component */
+.img-size-portofolio {
+    width: 100%;
+    height: 125px;
+    border-radius: 5px;
+}
+
+.img-we-size {
+    width: 70px;
+    height: 70px;
+    
+}

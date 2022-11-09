@@ -70,5 +70,7 @@
     }
     .navigation-responsive-icon {
         display: flex;
+        width: 100%;
+        
     }
 }

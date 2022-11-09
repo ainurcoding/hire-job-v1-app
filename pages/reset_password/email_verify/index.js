@@ -16,7 +16,7 @@ export default function Home() {
           <div className={`w-75 h-75`}>
             <div className={`${styles['banner-auth']}`}>
               <div className='p-5'>
-                <Link href='/landing'><Image src="/assets-img/white-logo.png" width={75} height={25}></Image></Link>
+                <Link href='/landing'><Image src="/assets-img/white-logo.png" width={75} height={25} alt="wkwkw"></Image></Link>
               </div>
               <div className='h-75 w-100 d-flex align-items-center'>
                 <p className={`p-5 display-5 ${styles['open_sans_sb']}`}>Temukan developer berbakat & terbaik di berbagai bidang keahlian</p>

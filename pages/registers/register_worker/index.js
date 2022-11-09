@@ -2,10 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../../styles/Auth.module.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from "axios"
-import { useEffect } from 'react';
 
 
 export default function Home() {
@@ -32,7 +31,7 @@ export default function Home() {
                 password: form.password
             }
             axios
-            .post(`http://localhost:5000/v1/user/register`,body)
+            .post(`${process.env.APP_BACKEND_URL}/v1/user/register_worker/`,body)
             .then((res) => {
                 console.log(res.data);
                 alert('Register Success');
@@ -56,7 +55,7 @@ export default function Home() {
                     <div className={`w-75 h-75`}>
                         <div className={`${styles['banner-auth']}`}>
                             <div className='p-5'>
-                                <Link href='/landing'><Image src="/assets-img/white-logo.png" width={75} height={25}></Image></Link>
+                                <Link href='/landing'><Image src="/assets-img/white-logo.png" width={75} height={25} alt="wkwk"></Image></Link>
                             </div>
                             <div className='h-75 w-100 d-flex align-items-center'>
                                 <p className={`p-5 display-5 ${styles['open_sans_sb']}`}>Temukan developer berbakat & terbaik di berbagai bidang keahlian</p>

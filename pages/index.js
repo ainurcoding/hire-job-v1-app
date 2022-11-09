@@ -15,18 +15,20 @@ export default function Home() {
     password: '',
   })
 
+  
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
     if (form.email === '' || form.password === '') {
       alert('Please input your mail and password')
     } else {
-      console.log(form.email +""+ form.password)
+      // console.log(form.email +""+ form.password)
       const body = {
         email: form.email,
         password: form.password
       };
       axios
-        .post(`http://localhost:5000/v1/user/login`, body)
+        .post(`${process.env.APP_BACKEND_URL}/v1/user/login`, body)
         .then((response) => {
           console.log(response.data);
           alert("login sukses");
@@ -57,11 +59,11 @@ export default function Home() {
         <link rel="icon" href="/icon.png" />
       </Head>
       <div className={`row vw-100 vh-100 ${styles['bg-auth']}`}>
-        <div className='col-7 d-flex justify-content-center align-items-center'>
+        <div className={`col-7 ${styles['col-xs-12']} col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 d-flex justify-content-center align-items-center`}>
           <div className={`w-75 h-75`}>
             <div className={`${styles['banner-auth']}`}>
               <div className='p-5'>
-                <Link href='/landing'><Image src="/assets-img/white-logo.png" width={75} height={25}></Image></Link>
+                <Link href='/landing'><Image src="/assets-img/white-logo.png" width={75} height={25} alt="wkwkw"></Image></Link>
               </div>
               <div className='h-75 w-100 d-flex align-items-center'>
                 <p className={`p-5 display-5 ${styles['open_sans_sb']}`}>Temukan developer berbakat & terbaik di berbagai bidang keahlian</p>
@@ -70,7 +72,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='d-flex justify-content-center align-items-center col-5'>
+        <div className={`col-5 ${styles['col-xs-12']} col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5 d-flex justify-content-center align-items-center `}>
           <div className='w-75 '>
             <div className='title mb-5'>
               <p className={`h1 ${styles['open_sans_sb']}`}>Halo, Pewpeople</p>

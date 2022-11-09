@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className={`position-fixed w-100 ${styles['navbar-height']} d-flex`}>
         <div className='col-6  d-flex align-items-center'>
             <div className='ms-5 logo'>
-            <Link href='/landing'><Image src="/assets-img/purple-logo.png" width={150} height={40}></Image></Link>
+            <Link href='/landing'><Image src="/assets-img/purple-logo.png" width={150} height={40} alt="wkwk"></Image></Link>
             </div>
         </div>
         <div className='col-5 d-flex align-items-center justify-content-end gap-3 '>

@@ -1,0 +1,22 @@
+.content-wrapper {
+    height: 1000px;
+    background-image: linear-gradient(to bottom , rgb(228, 227, 227) , white);
+}
+
+.btn-yellow-skill {
+    background-color: #ffce6d;
+    transition: 0.5s;
+}
+
+.btn-yellow-skill:hover {
+    background-color: #FBB017;
+}
+
+.btn-yellow {
+    background-color: #FBB017;
+    transition: 0.5s;
+}
+
+.btn-yellow:hover {
+    background-color: #ffce6d;
+}

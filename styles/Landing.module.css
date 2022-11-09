@@ -50,3 +50,12 @@
     overflow: auto;
     scroll-snap-type: none;
 }
+
+@media (max-width: 576px) {
+.col-xs-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+}
+

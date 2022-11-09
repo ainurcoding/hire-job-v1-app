@@ -1,0 +1,126 @@
+.card-aside-left {
+    width: 350px;
+    border-radius: 5px;
+    top: 5% !important;
+    left: 10% !important;
+    right: 0 !important;
+}
+
+.kontent-wrapper {
+    height: 2300px;
+    background: #F6F7F8;
+}
+
+.bg-purple {
+    width: 100%;
+    height: 300px;
+    background: #5E50A1;
+}
+
+.bg-white {
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+}
+
+.img-wraper {
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-aside-left {
+    width: 350px;
+}
+
+.spaceEmpty {
+    height: 50px;
+}
+
+.btn-purple {
+    height: 40px;
+    width: 100%;
+    background-color: #5E50A1;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5d50a1c3;
+    color: rgba(255, 255, 255, 0.739);
+}
+
+
+.btn-white {
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #5E50A1;
+    outline: none;
+    border-radius: 5px;
+    color: #5E50A1;
+}
+
+.btn-white:hover {
+    background-color: rgba(255, 255, 255, 0.739);
+    color: #5d50a1c3;
+    border: 1px solid #5E50A1;
+}
+
+.card-aside-right {
+    width: 700px;
+    top: 5% !important;
+    left: 40% !important;
+    right: 0 !important;
+}
+
+.bg-white-pd {
+    background-color: white;
+    border-radius: 5px;
+}
+
+.line-black {
+    border: 1px solid rgba(119, 119, 119, 0.553);
+}
+
+.btn-yellow {
+    height: 40px;
+    width: 100%;
+    background-color: #FBB017;
+    
+    outline: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-yellow:hover {
+    background-color: #cc8d10;
+    color: rgb(210, 210, 210);
+    
+}
+
+
+.btn-white-border-yellow {
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #FBB017;
+    outline: none;
+    border-radius: 5px;
+    color: #FBB017;
+}
+
+.btn-white-border-yellow:hover {
+    background-color: rgba(255, 255, 255, 0.739);
+    color: #ca901b;
+    border: 1px solid #ca901b;
+}
+
+.file-upload-wrapper {
+    height: 300px;
+    border: 1px dashed rgba(119, 119, 119, 0.553);
+}
+
+.img-cursor {
+    cursor: pointer;
+}
