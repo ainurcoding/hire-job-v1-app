@@ -1,0 +1,5 @@
+online env
+APP_BACKEND_URL=https://dark-rose-ox-cuff.cyclic.app
+
+local env
+APP_BACKEND_URL=http://localhost:5000

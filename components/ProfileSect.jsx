@@ -1,5 +1,6 @@
 import React from "react";
 import styles from '../styles/Portofolio.module.css'
+import Image from 'next/image'
 
 
 const Portofolio = () => {
@@ -7,7 +8,7 @@ const Portofolio = () => {
         <div className="portofolio-kontent row gap-2">
               <div className="card-wrapper col-3 d-flex flex-column">
                 <div className="img-wrapper">
-                  <img src="/assets-img/reminder app.png" className={`${styles['img-size-portofolio']}`} alt="" />
+                  <Image src="/assets-img/reminder app.png" height={125} width={125} className={`${styles['img-size-portofolio']}`} alt="dummy-img" ></Image>
                 </div>
                 <div className="desc d-flex justify-content-center">
                   <p className={`${styles['open_sans_sb']}`}>Web Remainder App</p>
@@ -15,7 +16,7 @@ const Portofolio = () => {
               </div>
               <div className="card-wrapper col-3 d-flex flex-column">
                 <div className="img-wrapper">
-                  <img src="/assets-img/reminder app.png" className={`${styles['img-size-portofolio']}`} alt="" />
+                <Image src="/assets-img/reminder app.png" height={125} width={125} className={`${styles['img-size-portofolio']}`} alt="dummy-img" ></Image>
                 </div>
                 <div className="desc d-flex justify-content-center">
                   <p className={`${styles['open_sans_sb']}`}>Web Remainder App</p>
@@ -23,7 +24,7 @@ const Portofolio = () => {
               </div>
               <div className="card-wrapper col-3 d-flex flex-column">
                 <div className="img-wrapper">
-                  <img src="/assets-img/reminder app.png" className={`${styles['img-size-portofolio']}`} alt="" />
+                <Image src="/assets-img/reminder app.png" height={125} width={125} className={`${styles['img-size-portofolio']}`} alt="dummy-img" ></Image>
                 </div>
                 <div className="desc d-flex  justify-content-center">
                   <p className={`${styles['open_sans_sb']}`}>Web Remainder App</p>
@@ -31,7 +32,7 @@ const Portofolio = () => {
               </div>
               <div className="card-wrapper col-3 d-flex flex-column">
                 <div className="img-wrapper">
-                  <img src="/assets-img/reminder app.png" className={`${styles['img-size-portofolio']}`} alt="" />
+                <Image src="/assets-img/reminder app.png" height={125} width={125} className={`${styles['img-size-portofolio']}`} alt="dummy-img" ></Image>
                 </div>
                 <div className="desc d-flex  justify-content-center">
                   <p className={`${styles['open_sans_sb']}`}>Web Remainder App</p>
@@ -46,7 +47,7 @@ const WorkExp = () => {
     return (
         <div className="WorkExp-kontent row gap-2">
             <div className="ms-3 col-2 wrapper-img">
-                <img src="/assets-img/Tokopedia.png" alt="tokopedia logo" className={`${styles['img-we-size']}`} />
+                <Image src="/assets-img/work-exp-icon.png" width={125} height={125} alt="tokopedia logo" className={`${styles['img-we-size']}`}></Image>
             </div>
             <div className="col-9 wrapper-img ">
                 <div className="title-job">

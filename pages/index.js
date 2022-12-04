@@ -15,7 +15,7 @@ export default function Home() {
     password: '',
   })
 
-  
+
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -31,12 +31,17 @@ export default function Home() {
         .post(`${process.env.APP_BACKEND_URL}/v1/user/login`, body)
         .then((response) => {
           console.log(response.data);
-          alert("login sukses");
-          localStorage.setItem("token", response.data.data.token);
-          localStorage.setItem("data", JSON.stringify(response.data.data.data));
-          return (
-            router.push('/landing')
-          )
+          if (!response.data.data) {
+            alert('email atau password salah');
+          } else {
+            alert("login sukses");
+            localStorage.setItem("token", response.data.data.token);
+            localStorage.setItem("data", JSON.stringify(response.data.data.data));
+            return (
+              router.push('/landing')
+            )
+          }
+
         })
         .catch((err) => {
           if (err.response) {

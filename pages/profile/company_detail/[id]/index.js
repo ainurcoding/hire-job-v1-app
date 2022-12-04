@@ -58,6 +58,7 @@ export async function getStaticPaths() {
 
 
 const Index = (props) => {
+  if(!props) return <div>Loading...</div>
   return (
     <>
       <Head>

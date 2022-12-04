@@ -188,7 +188,7 @@ export default function index() {
                 <div className="mb-3">
                   <label htmlFor="" className={`form-label ${styles['open_sans_sb']}`} >Upload gambar</label>
                 </div>
-                <div class={`${styles['file-upload-wrapper']} d-flex flex-column justify-content-center align-items-center gap-2`}>
+                <div className={`${styles['file-upload-wrapper']} d-flex flex-column justify-content-center align-items-center gap-2`}>
                   <div className="input-wrapper">
                     <input type="file" id="input-img-portofolio" className="file-upload d-none"
                       data-height="500" />

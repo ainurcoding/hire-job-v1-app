@@ -24,6 +24,7 @@ export default function Home() {
         if(form.password !== form.password2) {
             alert("password not match");
         } else {
+            console.log(process.env.APP_BACKEND_URL)
             const body = {
                 full_name: form.full_name,
                 email: form.email,
@@ -34,8 +35,8 @@ export default function Home() {
             .post(`${process.env.APP_BACKEND_URL}/v1/user/register_worker/`,body)
             .then((res) => {
                 console.log(res.data);
-                alert('Register Success');
-                router.push('/')
+                // alert('Register Success');
+                // router.push('/')
             })
             .catch((err) => {
                 console.log(err);
